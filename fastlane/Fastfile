@@ -1,10 +1,10 @@
 lane :test do
-  latest_version_code = latest_play_store_version_code
+  latest_version_code = latest_play_store_version_code(track: "internal")
 
   lines = []
   if File.exists?('local.properties')
     File.readlines('local.properties').each do |line|
-      if !line.startswith("flutter.versionCode")
+      if !line.start_with?("flutter.versionCode=")
         lines << line
       end
     end

@@ -83,10 +83,10 @@ module Fastlane
                                                  description: "The release name whose latest version code we want",
                                                  optional: true)
         options << FastlaneCore::ConfigItem.new(key: :initial_version_code,
-                                                 env_name: "INITIAL_VERSION_CODE",
-                                                 description: "sets the version code to given value if no release is found",
-                                                 default_value: 1,
-                                                 skip_type_validation: true) # allow Integer, String
+                                                env_name: "INITIAL_VERSION_CODE",
+                                                description: "sets the version code to given value if no release is found",
+                                                default_value: 1,
+                                                skip_type_validation: true) # allow Integer, String
       end
 
       def self.output
