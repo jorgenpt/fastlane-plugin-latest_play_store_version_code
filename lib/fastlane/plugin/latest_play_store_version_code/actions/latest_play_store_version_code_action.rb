@@ -1,5 +1,4 @@
 require 'fastlane/action'
-require_relative '../helper/latest_play_store_version_code_helper'
 
 module Fastlane
   module Actions
