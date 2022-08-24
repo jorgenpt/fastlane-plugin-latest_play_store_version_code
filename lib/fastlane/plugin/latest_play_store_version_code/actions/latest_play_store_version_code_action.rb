@@ -74,7 +74,7 @@ module Fastlane
         require 'supply/options'
         options = Supply::Options.available_options.clone
         
-        options_to_keep = [:package_name, :track, :json_key, :json_key_data, :root_url, :timeout]
+        options_to_keep = [:package_name, :track, :json_key, :json_key_data, :key, :issuer, :root_url, :timeout]
         options.delete_if { |option| options_to_keep.include?(option.key) == false }
 
         options <<  FastlaneCore::ConfigItem.new(key: :release_name,
