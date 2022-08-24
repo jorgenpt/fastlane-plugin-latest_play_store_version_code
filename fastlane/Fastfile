@@ -1,0 +1,16 @@
+lane :test do
+  latest_version_code = latest_play_store_version_code
+
+  lines = []
+  if File.exists?('local.properties')
+    File.readlines('local.properties').each do |line|
+      if !line.startswith("flutter.versionCode")
+        lines << line
+      end
+    end
+  end
+
+  lines << ["flutter.versionCode=#{latest_version_code + 1}"]
+
+  File.open("local.properties", 'w') { |file| file.write(lines.join("\n")) }
+end
